@@ -1,0 +1,12 @@
+Package: MS.metadata.extract
+Title: Easy creation of batch upload manifest for Morphosource 2.0 
+Version: 0.0.0.9000
+Authors@R: 
+    person("Edward", "Stanley", , "elstanley@ufl.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Code that allows users to compile a batch upload manifest for Morphosource 2.0 using metadata files from Phoenix, Nikon and Brucker systems.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
