@@ -1,0 +1,27 @@
+# To use this script, You will first need to copy all the PCA files you want to batch upload into a folder modify the code to fit your own preferences, run the function in r, then type 
+
+> MorphsourcePCAbatch(“DIRECTORY PATH”) 
+
+# where DIRECTORY PATH is the folder you are keeping all the PCA files in. This will produce a .csv file in the same directory that is formatted to the new Batch manifest.
+
+# I have listed some of the features that will change the most frequently as options in the function header, and set my preferred defaults, so for example if I wanted to process UF herp PCAs that are named “UF-herp-XXXXX in a subfolder /UFHERP and private, all I would have to do is type 
+
+> MorphsourcePCAbatch(“UFHERP”)
+
+
+#If one wanted to use the same code to run some CAS fish PCAs in a CAS-ichthyology folder publicly and the naming convention is CAS-XXXXXX (i.e. no collection code):
+
+> MorphsourcePCAbatch(“CAS-icthyology/“,media_pub_status=“restricted download”, Institution= “CAS”, CollectionCode=“Fish”,Creator=“Jaimi Gray”, Naming=“2part")
+
+# Feel free to change the defaults on the top line of your code so you don't have to keep changing the “Creator" etc.
+
+There are a couple of caveats for this code:
+
+1) this can only be run for one collection at a time- you’ll need to sort the PCAs from different collections into their own folders.
+2) the code can handle files with 2part (UF-XXXX) and 3part (UF-Herp-XXX) IDs (i.e. with or without a collection code) but not in the same run, so keep the two naming convention files in separate folders.
+3) it currently does not pull out multi-part media.parts (eg. DICECT head). As it stands, the code just uses the fourth part of the file name (if naming is set to 3part, or the third part if naming is set to 2part). The file names are split up with “-“, “_” and spaces. If you prefer, we can only split them with hyphens and underscores, which would let us use spaces for the media.part section. I may need to change the formatting further for collections with irritating multipart specimen numbers (e.g. the peabody). 
+4) The .zip files names have to be identical to the .pca files (I figured this is usually the way we do this and this way we don't need to move the large .zip files to the processing folders)
+5) It should report when Darwin core triplets are not found in idigbo but won’t break the run like the python script, I thought that this would make it easier to find the problem/newly accessioned file names
+
+
+Once the file has been written, you can copy the cells directly into the Morphosource batch manifest file and send it off (you will need to upload the zip files to the duke server). it looks like the funding, scanner and scanning institutions are now entered on the upload page, and not included in the sheet, so no need to add that info here but include it on the email to Morphosource.
