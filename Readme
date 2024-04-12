@@ -2,7 +2,7 @@
 
 > MorphsourcePCAbatch(“DIRECTORY PATH”) 
 
-# where DIRECTORY PATH is the folder you are keeping all the PCA files in. This will produce a .csv file in the same directory that is formatted to the new Batch manifest.
+# where DIRECTORY PATH is the folder you are keeping all the metadata files (Phoenix PCA, bruker .log or Nikon XTECK). This will produce a .csv file in the same directory that is formatted to the new Morphosource Batch manifest.
 
 # I have listed some of the features that will change the most frequently as options in the function header, and set my preferred defaults, so for example if I wanted to process UF herp PCAs that are named “UF-herp-XXXXX in a subfolder /UFHERP and private, all I would have to do is type 
 
@@ -15,7 +15,7 @@
 
 # Feel free to change the defaults on the top line of your code so you don't have to keep changing the “Creator" etc.
 
-There are a couple of caveats for this code:
+There are a few caveats for this code:
 
 1) this can only be run for one collection at a time- you’ll need to sort the PCAs from different collections into their own folders.
 2) the code can handle files with 2part (UF-XXXX) and 3part (UF-Herp-XXX) IDs (i.e. with or without a collection code) but not in the same run, so keep the two naming convention files in separate folders.
