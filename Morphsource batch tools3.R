@@ -183,7 +183,7 @@ for (i in 1:metadatafileNo){
   Genus<-results1$genus
   Genus<-str_to_title(Genus)
   SpeciesName<-gsub(results1$genus,"",as.character(results1$scientificname))
-  DateCollected<-results1$datecollected
+  DateCollected<-results1$`data.dwc:eventDate`
   Collector<-results1$collector
   Lattitude<-results1$geopoint.lat
   Longitude<-results1$geopoint.lon
@@ -342,7 +342,7 @@ if(Scanning.system=="Nikon"){
       Genus<-results1$genus
       Genus<-str_to_title(Genus)
       SpeciesName<-gsub(results1$genus,"",as.character(results1$scientificname))
-      DateCollected<-results1$datecollected
+      DateCollected<-results1$`data.dwc:eventDate`
       Collector<-results1$collector
       Lattitude<-results1$geopoint.lat
       Longitude<-results1$geopoint.lon
@@ -489,7 +489,7 @@ if(Scanning.system=="Bruker"){
       Genus<-results1$genus
       Genus<-str_to_title(Genus)
       SpeciesName<-gsub(results1$genus,"",as.character(results1$scientificname))
-      DateCollected<-results1$datecollected
+      DateCollected<-results1$`data.dwc:eventDate`
       Collector<-results1$collector
       Lattitude<-results1$geopoint.lat
       Longitude<-results1$geopoint.lon
